@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Hello Fresh UI TEST]">
+  <parameter name="browser" value="chrome"/>
+  <listeners>
+    <listener class-name="org.uncommons.reportng.HTMLReporter"/>
+    <listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
+    <listener class-name="com.utilities.ExtentReporterNG"/>
+    <listener class-name="com.utilities.LoggingSetUp"/>
+  </listeners>
+  <test name="Login Test(failed)">
+    <parameter name="browser" value="chrome"/>
+    <classes>
+      <class name="com.hellofresh.challenge.WebTest">
+        <methods>
+          <include name="logInTest"/>
+          <include name="takeScreenShotOnFailure"/>
+          <include name="launhOS"/>
+          <include name="signInTest"/>
+          <include name="checkOutTest"/>
+          <include name="afterTest"/>
+        </methods>
+      </class> <!-- com.hellofresh.challenge.WebTest -->
+    </classes>
+  </test> <!-- Login Test(failed) -->
+</suite> <!-- Failed suite [Hello Fresh UI TEST] -->

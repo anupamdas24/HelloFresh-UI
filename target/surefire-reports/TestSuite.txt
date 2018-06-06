@@ -1,0 +1,8 @@
+-------------------------------------------------------------------------------
+Test set: TestSuite
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 137.619 sec <<< FAILURE! - in TestSuite
+signInTest(com.hellofresh.challenge.WebTest)  Time elapsed: 104.949 sec  <<< FAILURE!
+java.lang.NullPointerException: null
+	at com.hellofresh.challenge.WebTest.signInTest(WebTest.java:13)
+
