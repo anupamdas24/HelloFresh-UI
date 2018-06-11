@@ -3,16 +3,10 @@
 <suite name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="com.actionEngine.BaseOperation">
-        <methods>
-          <include name="afterTest"/>
-        </methods>
-      </class> <!-- com.actionEngine.BaseOperation -->
       <class name="com.hellofresh.challenge.WebTest">
         <methods>
-          <include name="logInTest"/>
-          <include name="signInTest"/>
-          <include name="checkOutTest"/>
+          <include name="logInTest" invocation-numbers="0"/>
+          <include name="endTest"/>
         </methods>
       </class> <!-- com.hellofresh.challenge.WebTest -->
     </classes>

@@ -4,14 +4,14 @@
            failures="1"
            errors="0"
            skipped="0"
-           time="103.634">
+           time="0.003">
   <properties />
-            <testcase name="signInTest" time="103.634" classname="com.hellofresh.challenge.WebTest">
+            <testcase name="signInTest" time="0.003" classname="com.hellofresh.challenge.WebTest">
                 <failure type="java.lang.NullPointerException"
                   message="(null)"
               >
 <![CDATA[java.lang.NullPointerException
-  com.hellofresh.challenge.WebTest.signInTest(WebTest.java:13)
+  com.hellofresh.challenge.WebTest.signInTest(WebTest.java:17)
   sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
   sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
   sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)

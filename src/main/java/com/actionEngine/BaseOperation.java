@@ -22,6 +22,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterSuite;
@@ -39,12 +40,12 @@ public class BaseOperation{
 	public PageContainer container;
 
 	@BeforeClass
-	@Parameters("BROWSER")
+	@org.testng.annotations.Parameters({ "browser" })
 
 	public void launhOS(String browser) throws MalformedURLException {
 		getExtentConfigXML();
 		if (System.getProperty("os.name").toLowerCase().contains("win") == true) {
-			System.out.println("We are now in Windows !! Welcome !!!");
+			System.out.println("We are now in Windows with  "+ browser);
 			if (browser.equalsIgnoreCase("chrome")) {
 				System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + File.separator
 						+ "drivers" + File.separator + "chrome_win32" + File.separator + "chromedriver.exe");

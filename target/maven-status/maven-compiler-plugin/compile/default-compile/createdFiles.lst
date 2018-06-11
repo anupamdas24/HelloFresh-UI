@@ -1,9 +1,9 @@
 com\actionEngine\BaseOperation.class
+com\pages\SignInPage.class
 com\utilities\CustomException.class
 com\utilities\ExtentReporterNG.class
 com\pages\PageBase.class
 com\utilities\Getconfig.class
-com\pages\LoginPage.class
 com\pages\PageContainer.class
 com\utilities\ExcelDP.class
 com\utilities\LoggingSetUp.class

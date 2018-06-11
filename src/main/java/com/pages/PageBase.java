@@ -20,21 +20,19 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
+import com.actionEngine.BaseOperation;
+
 
 public class PageBase {
 
 	public WebDriver driver;
 
 	public PageBase(WebDriver driver) {
-		PageFactory.initElements(driver, this);
+		PageFactory.initElements(BaseOperation.driver, this);
 		this.driver = driver;
 
 	}
 
-	public static int getRandomDoubleBetweenRange(double min, double max){
-	    int x = (int)Math.round((Math.random()*((max-min)+1))+min);
-	    return x;
-	}
 
 	public void inputText(WebElement element, String value) {
 
@@ -80,30 +78,6 @@ public class PageBase {
 
 		Actions action = new Actions(driver);
 		action.moveToElement(element).build().perform();
-	}
-
-	// perform mouse hover actions using Javascript executer.
-	public void JSmouseHover(WebElement element) {
-		try {
-			if (isElementPresent(element)) {
-
-				String mouseOverScript = "if(document.createEvent){var evObj = document.createEvent('MouseEvents');evObj.initEvent('mouseover',true, false); arguments[0].dispatchEvent(evObj);} else if(document.createEventObject) { arguments[0].fireEvent('onmouseover');}";
-				((JavascriptExecutor) driver).executeScript(mouseOverScript, element);
-
-			} else {
-				System.out.println("Element not visible to hover " + "\n");
-
-			}
-		} catch (
-
-		StaleElementReferenceException e) {
-			System.out.println("Element with " + element + "is not attached to the page document" + e.getStackTrace());
-		} catch (NoSuchElementException e) {
-			System.out.println("Element " + element + " was not found in DOM" + e.getStackTrace());
-		} catch (Exception e) {
-			e.printStackTrace();
-			System.out.println("Error occurred while hovering" + e.getStackTrace());
-		}
 	}
 
 	// select specified text from a dropdown(element)

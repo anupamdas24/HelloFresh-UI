@@ -10,12 +10,13 @@
 		<listener class-name="com.utilities.LoggingSetUp" />
 	</listeners>
 
+<parameter name="browser" value="chrome" />
 	<test name="Login Test">
-			<parameter name="BROWSER" value="chrome" />
 		<classes>
 			<class name="com.hellofresh.challenge.WebTest" />
 		</classes>
 	</test>
 
 </suite>
+
 

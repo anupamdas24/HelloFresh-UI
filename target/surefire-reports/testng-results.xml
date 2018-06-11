@@ -62,12 +62,12 @@
       <![CDATA[About to end executing Suite Hello Fresh UI TEST]]>
     </line>
   </reporter-output>
-  <suite name="Hello Fresh UI TEST" duration-ms="129514" started-at="2018-06-06T04:19:22Z" finished-at="2018-06-06T04:21:31Z">
+  <suite name="Hello Fresh UI TEST" duration-ms="15829" started-at="2018-06-11T10:58:36Z" finished-at="2018-06-11T10:58:52Z">
     <groups>
     </groups>
-    <test name="Login Test" duration-ms="129514" started-at="2018-06-06T04:19:22Z" finished-at="2018-06-06T04:21:31Z">
+    <test name="Login Test" duration-ms="15829" started-at="2018-06-11T10:58:36Z" finished-at="2018-06-11T10:58:52Z">
       <class name="com.hellofresh.challenge.WebTest">
-        <test-method status="PASS" signature="launhOS(java.lang.String)[pri:0, instance:com.hellofresh.challenge.WebTest@45311a99]" name="launhOS" is-config="true" duration-ms="17470" started-at="2018-06-06T09:49:22Z" finished-at="2018-06-06T09:49:39Z">
+        <test-method status="PASS" signature="launhOS(java.lang.String)[pri:0, instance:com.hellofresh.challenge.WebTest@29bd85db]" name="launhOS" is-config="true" duration-ms="14564" started-at="2018-06-11T16:28:36Z" finished-at="2018-06-11T16:28:51Z">
           <params>
             <param index="0">
               <value>
@@ -84,11 +84,11 @@
             </line>
           </reporter-output>
         </test-method> <!-- launhOS -->
-        <test-method status="FAIL" signature="signInTest()[pri:0, instance:com.hellofresh.challenge.WebTest@45311a99]" name="signInTest" duration-ms="103634" started-at="2018-06-06T09:49:39Z" description="Validate the successful sign in test" finished-at="2018-06-06T09:51:23Z">
+        <test-method status="FAIL" signature="signInTest()[pri:0, instance:com.hellofresh.challenge.WebTest@29bd85db]" name="signInTest" duration-ms="3" started-at="2018-06-11T16:28:51Z" description="Validate the successful sign in test" finished-at="2018-06-11T16:28:51Z">
           <exception class="java.lang.NullPointerException">
             <full-stacktrace>
               <![CDATA[java.lang.NullPointerException
-	at com.hellofresh.challenge.WebTest.signInTest(WebTest.java:13)
+	at com.hellofresh.challenge.WebTest.signInTest(WebTest.java:17)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -164,11 +164,11 @@
             </line>
           </reporter-output>
         </test-method> <!-- signInTest -->
-        <test-method status="PASS" signature="takeScreenShotOnFailure(org.testng.ITestResult)[pri:0, instance:com.hellofresh.challenge.WebTest@45311a99]" name="takeScreenShotOnFailure" is-config="true" duration-ms="1828" started-at="2018-06-06T09:51:29Z" finished-at="2018-06-06T09:51:31Z">
+        <test-method status="PASS" signature="takeScreenShotOnFailure(org.testng.ITestResult)[pri:0, instance:com.hellofresh.challenge.WebTest@29bd85db]" name="takeScreenShotOnFailure" is-config="true" duration-ms="1251" started-at="2018-06-11T16:28:51Z" finished-at="2018-06-11T16:28:52Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=signInTest status=FAILURE method=WebTest.signInTest()[pri:0, instance:com.hellofresh.challenge.WebTest@45311a99] output=Completed executing following method : WebTest.signInTest]]]>
+                <![CDATA[[TestResult name=signInTest status=FAILURE method=WebTest.signInTest()[pri:0, instance:com.hellofresh.challenge.WebTest@29bd85db] output=Completed executing following method : WebTest.signInTest]]]>
               </value>
             </param>
           </params>
@@ -181,7 +181,7 @@
             </line>
           </reporter-output>
         </test-method> <!-- takeScreenShotOnFailure -->
-        <test-method status="PASS" signature="afterTest()[pri:0, instance:com.hellofresh.challenge.WebTest@45311a99]" name="afterTest" is-config="true" duration-ms="6189" started-at="2018-06-06T09:51:31Z" finished-at="2018-06-06T09:51:38Z">
+        <test-method status="PASS" signature="afterTest()[pri:0, instance:com.hellofresh.challenge.WebTest@29bd85db]" name="afterTest" is-config="true" duration-ms="955" started-at="2018-06-11T16:28:52Z" finished-at="2018-06-11T16:28:53Z">
           <reporter-output>
             <line>
               <![CDATA[Completed executing following method : BaseOperation.afterTest]]>

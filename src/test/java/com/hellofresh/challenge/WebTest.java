@@ -1,16 +1,21 @@
 package com.hellofresh.challenge;
 
+
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import com.actionEngine.BaseOperation;
+import com.utilities.ExcelDP;
 
 
 public class WebTest extends BaseOperation{
+	
+	
 
 	@Test(priority = 0, description = "Validate the successful sign in test", enabled = true, alwaysRun=true)
 	public void signInTest() throws InterruptedException {
 		container.loginPage.signInTestValidation();
+		
 	}
 	
 	@Test(dataProvider = "LoginTest", priority = 1, description = "Validate the successful login in test", enabled = false,alwaysRun=true)
@@ -27,6 +32,12 @@ public class WebTest extends BaseOperation{
 	
     @DataProvider(name = "LoginTest")
 	public Object[][] LoginDataProvider() throws Exception {
-    	return com.utilities.ExcelDP.getTableArray("testData", "DemoChallengeData");
+    	return ExcelDP.getTableArray("testData", "DemoChallengeData");
 	}
+    
+//    @AfterTest
+//	public void endTest() {
+//		driver.close();
+//		driver.quit();
+//	}
 }
