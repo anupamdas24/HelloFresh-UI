@@ -1,1 +1,3 @@
-com\hellofresh\challenge\WebTest.class
+com\hellofresh\challenge\SignInTest.class
+com\hellofresh\challenge\CheckOutTest.class
+com\hellofresh\challenge\LoginTest.class

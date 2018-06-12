@@ -1,3 +1,5 @@
+/*Package containing the common functionalities*/
+
 package com.pages;
 
 import java.io.IOException;
@@ -22,6 +24,9 @@ import org.testng.Assert;
 
 import com.actionEngine.BaseOperation;
 
+/*
+ * This class contains all the common functionalities to be performed by the driver on webelements.
+ */
 
 public class PageBase {
 
@@ -32,7 +37,6 @@ public class PageBase {
 		this.driver = driver;
 
 	}
-
 
 	public void inputText(WebElement element, String value) {
 
@@ -52,18 +56,7 @@ public class PageBase {
 			element.click();
 		} catch (Exception e) {
 
-			assertFail("unable to click "+element);
-		}
-
-
-	}
-
-	// return true if element is present
-	public boolean isElementPresent(WebElement element) {
-		try {
-			return element.isDisplayed();
-		} catch (NoSuchElementException e) {
-			return false;
+			assertFail("unable to click " + element);
 		}
 
 	}
@@ -74,7 +67,7 @@ public class PageBase {
 	}
 
 	// perform mouse hover action on the element parameter
-	public void mouseHoverAndClickOnElement(WebElement element) {
+	public void mouseHoverOnElement(WebElement element) {
 
 		Actions action = new Actions(driver);
 		action.moveToElement(element).build().perform();
@@ -87,7 +80,7 @@ public class PageBase {
 		select.selectByVisibleText(textToBeSelected);
 
 	}
-	
+
 	public void selectByValue(WebElement element, String value) {
 		waitForElementTobeClickable(element);
 		Select select = new Select(element);
@@ -104,39 +97,25 @@ public class PageBase {
 
 	// wait for the element on the web page to be clickable
 	public void waitForElementTobeClickable(WebElement element) {
-		WebDriverWait w = new WebDriverWait(driver, 50);
+		WebDriverWait w = new WebDriverWait(driver, 30);
 		try {
 			w.until(ExpectedConditions.elementToBeClickable(element));
 		} catch (Exception e) {
-			assertFail("Element"+element+" not found after wait");
+			assertFail("Element" + element + " not found after wait");
 		}
 
 	}
-
-	// from the specified container, click on the text that is passed as
-	// parameter
-	public void selectElementFromContainer(WebElement element, String tagName, String textToBeClicked)
-			throws IOException {
-		List<WebElement> list = element.findElements(By.tagName(tagName));
-		for (WebElement webElement : list) {
-			if (webElement.getText().equals(textToBeClicked)) {
-				webElement.click();
-			}
-		}
-	}
-
 
 	public void waitForElementTobevisible(WebElement element) {
-        WebDriverWait w = new WebDriverWait(driver, 50);
-        try {
-            w.until(ExpectedConditions.visibilityOf(element));
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
+		WebDriverWait w = new WebDriverWait(driver, 50);
+		try {
+			w.until(ExpectedConditions.visibilityOf(element));
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
 
-
-	public void pageLoad(long time){
+	public void pageLoad(long time) {
 		driver.manage().timeouts().pageLoadTimeout(time, TimeUnit.SECONDS);
 	}
 
@@ -150,73 +129,9 @@ public class PageBase {
 		executor.executeScript("arguments[0].click();", element);
 	}
 
-	public boolean isAlertPresent() {
-
-		try {
-			Alert alert = driver.switchTo().alert();
-			return true;
-		} catch (Exception e) {
-			return false;
-		}
-	}
-
-	public int getNumberElementsFromContainer(WebElement container, String tagName) {
-		int number = 0;
-		List<WebElement> webelements = container.findElements(By.tagName(tagName));
-		for (WebElement webElement : webelements) {
-			number++;
-		}
-		return number;
-	}
-
-	public void doubleClick(WebElement el){
-		Actions action=new Actions(driver);
-		action.doubleClick(el);
-	}
-
-	public String convertListToString(List<String> values) {
-
-		StringBuffer newValue = new StringBuffer();
-
-		for (String string : values) {
-			newValue.append(string);
-			newValue.append(">");
-		}
-		newValue.deleteCharAt(newValue.length() - 1);
-
-		return newValue.toString();
-	}
-	public List<String> convertStringToList(String value) {
-
-		List<String> list = new ArrayList<String>(Arrays.asList(value.split(">")));
-		return list;
-
-	}
-
-	public boolean comapreTwoStrings(String value1, String value2) {
-		boolean flag = true;
-		if (value1 != value2) {
-			flag = false;
-		}
-		return flag;
-	}
-
-
-	public String getText(WebElement element){
-		String message = "";
-		try {
-			waitForElementTobevisible(element);
-		 message= element.getText();
-		} catch (Exception e) {
-			assertFail("unable to get text of "+element);
-
-		}
-		return message;
-	}
-
-	public void waitForTextToAppear(WebElement element,String textToAppear) {
-	    WebDriverWait wait = new WebDriverWait(driver,100);
-	    wait.until(ExpectedConditions.textToBePresentInElement(element, textToAppear));
+	public void waitForTextToAppear(WebElement element, String textToAppear) {
+		WebDriverWait wait = new WebDriverWait(driver, 100);
+		wait.until(ExpectedConditions.textToBePresentInElement(element, textToAppear));
 	}
 
 }

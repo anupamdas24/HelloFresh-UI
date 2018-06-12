@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Hello Fresh UI TEST" parallel="false">
+<suite name="Hello Fresh UI TEST">
 
 	<listeners>
 		<listener class-name="org.uncommons.reportng.HTMLReporter" />
@@ -10,10 +10,22 @@
 		<listener class-name="com.utilities.LoggingSetUp" />
 	</listeners>
 
-<parameter name="browser" value="chrome" />
+	<parameter name="browser" value="chrome" />
 	<test name="Login Test">
 		<classes>
-			<class name="com.hellofresh.challenge.WebTest" />
+			<class name="com.hellofresh.challenge.LoginTest" />
+		</classes>
+	</test>
+	<parameter name="browser" value="chrome" />
+	<test name="SignIn Test">
+		<classes>
+			<class name="com.hellofresh.challenge.SignInTest" />
+		</classes>
+	</test>
+	<parameter name="browser" value="chrome" />
+	<test name="CheckOut Test">
+		<classes>
+			<class name="com.hellofresh.challenge.CheckOutTest" />
 		</classes>
 	</test>
 

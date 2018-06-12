@@ -1,21 +1,26 @@
+/*This class contains all the page objects and the operational methods on them */
+
 package com.pages;
 
 import java.util.Date;
+
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Action;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import junit.framework.Assert;
 
 public class SignInPage extends PageBase {
 
-
 	public SignInPage(WebDriver driver) {
 		super(driver);
-		// TODO Auto-generated constructor stub
 	}
 
 	WebDriverWait wait = new WebDriverWait(driver, 30);
@@ -26,8 +31,8 @@ public class SignInPage extends PageBase {
 	@FindBy(how = How.ID, using = "SubmitCreate")
 	private WebElement submitCreate;
 
-	@FindBy(how = How.ID, using = "id_gender2")
-	private WebElement idGender2;
+	@FindBy(how = How.XPATH, using = "//form[@id='account-creation_form']/descendant::label[@for='id_gender2']")
+	private WebElement Mrs;
 
 	@FindBy(how = How.ID, using = "customer_firstname")
 	private WebElement customerFirstname;
@@ -38,13 +43,13 @@ public class SignInPage extends PageBase {
 	@FindBy(how = How.ID, using = "passwd")
 	private WebElement password;
 
-	@FindBy(how = How.ID, using = "days")
+	@FindBy(how = How.XPATH, using = "//div[@id='uniform-days']/select")
 	private WebElement days;
 
-	@FindBy(how = How.ID, using = "months")
+	@FindBy(how = How.XPATH, using = "//select[@id='months']")
 	private WebElement months;
 
-	@FindBy(how = How.ID, using = "years")
+	@FindBy(how = How.XPATH, using = "//select[@id='years']")
 	private WebElement years;
 
 	@FindBy(how = How.ID, using = "company")
@@ -59,7 +64,7 @@ public class SignInPage extends PageBase {
 	@FindBy(how = How.ID, using = "city")
 	private WebElement city;
 
-	@FindBy(how = How.ID, using = "id_state")
+	@FindBy(how = How.XPATH, using = "//select[@name='id_state']")
 	private WebElement idState;
 
 	@FindBy(how = How.ID, using = "postcode")
@@ -83,10 +88,10 @@ public class SignInPage extends PageBase {
 	@FindBy(how = How.ID, using = "passwd")
 	private WebElement passwd;
 
-	@FindBy(how = How.XPATH, using = "//*[@id='layer_cart']//a[@class and @title='Proceed to checkout']")
+	@FindBy(how = How.XPATH, using = "//div[@id='layer_cart']//a[@class and @title='Proceed to checkout']")
 	private WebElement proceedToCheckOut;
 
-	@FindBy(how = How.XPATH, using = "//*[contains(@class,'cart_navigation')]/a[@title='Proceed to checkout']")
+	@FindBy(how = How.XPATH, using = "//p[contains(@class,'cart_navigation')]/a[@title='Proceed to checkout']")
 	private WebElement cartNavProceedToCheckOut;
 
 	@FindBy(how = How.NAME, using = "processAddress")
@@ -98,7 +103,7 @@ public class SignInPage extends PageBase {
 	@FindBy(how = How.ID, using = "email")
 	private WebElement email;
 
-	@FindBy(how = How.ID, using = "SubmitLogin")
+	@FindBy(how = How.XPATH, using = "//button[@id='SubmitLogin']")
 	private WebElement SubmitLogin;
 
 	@FindBy(how = How.NAME, using = "processCarrier")
@@ -113,6 +118,9 @@ public class SignInPage extends PageBase {
 	@FindBy(how = How.CSS, using = "h1")
 	private WebElement heading;
 
+	@FindBy(how = How.XPATH, using = "//div[@id='header_logo']/a/img")
+	private WebElement headerLogo;
+
 	@FindBy(how = How.CLASS_NAME, using = "account")
 	private WebElement account;
 
@@ -122,16 +130,16 @@ public class SignInPage extends PageBase {
 	@FindBy(how = How.CLASS_NAME, using = "logout")
 	private WebElement logout;
 
-	@FindBy(how = How.CLASS_NAME, using = "login")
+	@FindBy(how = How.XPATH, using = "//a[@class='login']")
 	private WebElement login;
 
-	@FindBy(how = How.NAME, using = "Submit")
+	@FindBy(how = How.XPATH, using = "//button[@name='Submit']")
 	private WebElement Submit;
 
-	@FindBy(how = How.LINK_TEXT, using = "Women")
+	@FindBy(how = How.XPATH, using = "//a[@title='Women']")
 	private WebElement Women;
 
-	@FindBy(how = How.XPATH, using = "//a[@title='Faded Short Sleeve T-shirts']/ancestor::li")
+	@FindBy(how = How.XPATH, using = "//a[@title='Faded Short Sleeve T-shirts']")
 	private WebElement fadedShortSleeveTShirt;
 
 	@FindBy(how = How.XPATH, using = "//li[@class='step_done step_done_last four']")
@@ -140,43 +148,50 @@ public class SignInPage extends PageBase {
 	@FindBy(how = How.XPATH, using = "//li[@id='step_end' and @class='step_current last']")
 	private WebElement stepEnd;
 
-	@FindBy(how = How.XPATH, using = "//*[@class='cheque-indent']/strong")
-	private WebElement YourOrderOnMyStore;
+	@FindBy(how = How.XPATH, using = "//p[@class='cheque-indent']/strong")
+	private WebElement OrderConfirmation;
 
-	public void signInTestValidation() {
-		System.out.println("Inside the signIntest");
-			wait.until(ExpectedConditions.visibilityOf(login)).click();
-			String timestamp = String.valueOf(new Date().getTime());
+	public void signInTestValidation(String firstName, String lastName, String password, String dayValue,
+			String monthValue, String yearValue, String companyData, String address11, String address12,
+			String cityValue, String stateValue, String postalCode, String otherInfo, String homePhoneNumber,
+			String mobilePhoneNumber, String addressAlias) {
+		wait.until(ExpectedConditions.visibilityOf(login)).click();
+		String timestamp = String.valueOf(new Date().getTime());
 
-			String email = "hf_challenge_" + timestamp + "@hf" + timestamp.substring(7) + ".com";
-			String name = "Firstname";
-			String surname = "Lastname";
-			inputText(emailCreate, email);
-			submitCreate.click();
+		String email = "hf_challenge_" + timestamp + "@hf" + timestamp.substring(7) + ".com";
+		inputText(emailCreate, email);
+		submitCreate.click();
 
-			wait.until(ExpectedConditions.visibilityOf(idGender2)).click();
+		wait.until(ExpectedConditions.visibilityOf(Mrs)).click();
 
-			inputText(customerFirstname, name);
-			inputText(customerLastname, surname);
-			inputText(passwd, "Qwerty");
+		inputText(customerFirstname, firstName);
+		inputText(customerLastname, lastName);
+		inputText(passwd, password);
 
-			selectByValue(days, "1");
-			selectByValue(months, "1");
-			selectByValue(years, "2000");
+		inputText(company, companyData);
+		address1.sendKeys(address11);
+		address2.sendKeys(address12);
+		city.sendKeys(cityValue);
 
-			inputText(company,"Company");
-			address1.sendKeys("Qwerty, 123");
-			address2.sendKeys("zxcvb");
-			city.sendKeys("Qwerty");
+		Actions builder = new Actions(driver);
+		Action mouseOverToSelect = builder.moveToElement(idState).build();
+		mouseOverToSelect.perform();
+		driver.findElement(By.xpath("//select[@name='id_state']/option[text()='" + stateValue + "']")).click();
 
-			selectByVisibleText(idState, "Colorado");
-			postcode.sendKeys("12345");
-			other.sendKeys("Qwerty");
-			phone.sendKeys("12345123123");
-			phoneMobile.sendKeys("12345123123");
-			alias.sendKeys("hf");
-			submitAccount.click();
-			wait.until(ExpectedConditions.visibilityOf(heading));
+		postcode.sendKeys(postalCode);
+		other.sendKeys(otherInfo);
+		phone.sendKeys(homePhoneNumber);
+		phoneMobile.sendKeys(mobilePhoneNumber);
+		alias.sendKeys(addressAlias);
+		submitAccount.click();
+		wait.until(ExpectedConditions.visibilityOf(heading));
+
+		Assert.assertTrue(driver.getCurrentUrl().contains("controller=my-account"));
+		Assert.assertEquals("MY ACCOUNT", heading.getText());
+		Assert.assertTrue(logout.isDisplayed());
+
+		wait.until(ExpectedConditions.visibilityOf(headerLogo)).click();
+		wait.until(ExpectedConditions.visibilityOf(logout)).click();
 
 	}
 
@@ -195,6 +210,8 @@ public class SignInPage extends PageBase {
 		Assert.assertTrue(logout.isDisplayed());
 		Assert.assertTrue(driver.getCurrentUrl().contains("controller=my-account"));
 
+		wait.until(ExpectedConditions.visibilityOf(logout)).click();
+
 	}
 
 	public void checkOutTestValidation(String existingUserEmail, String existingUserPassword) {
@@ -205,7 +222,10 @@ public class SignInPage extends PageBase {
 		SubmitLogin.click();
 
 		wait.until(ExpectedConditions.visibilityOf(Women)).click();
-		fadedShortSleeveTShirt.click();
+		wait.until(ExpectedConditions.visibilityOf(fadedShortSleeveTShirt));
+		mouseHoverOnElement(fadedShortSleeveTShirt);
+		jsclick(fadedShortSleeveTShirt);
+
 		wait.until(ExpectedConditions.visibilityOf(Submit)).click();
 		wait.until(ExpectedConditions.visibilityOf(proceedToCheckOut)).click();
 		wait.until(ExpectedConditions.visibilityOf(cartNavProceedToCheckOut)).click();
@@ -215,6 +235,12 @@ public class SignInPage extends PageBase {
 		wait.until(ExpectedConditions.visibilityOf(bankwire)).click();
 		wait.until(ExpectedConditions.visibilityOf(cartNavBtn)).click();
 		wait.until(ExpectedConditions.visibilityOf(heading));
+
+		Assert.assertTrue(driver.getCurrentUrl().contains("?controller=order-confirmation"));
+		Assert.assertTrue(OrderConfirmation.getText().contains("Your order on My Store is complete"));
+		Assert.assertTrue(stepEnd.getAttribute("id").contains("step_end"));
+
+		wait.until(ExpectedConditions.visibilityOf(logout)).click();
 
 	}
 

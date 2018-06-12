@@ -1,3 +1,7 @@
+/*
+ * This class is provides the logging utility while the execution is going on. This is helpful to debug the issue in case there is a failure.
+ */
+
 package com.utilities;
 
 import org.testng.IClass;
@@ -12,7 +16,7 @@ import org.testng.ITestResult;
 import org.testng.Reporter;
 import org.testng.TestListenerAdapter;
 
-public class LoggingSetUp extends TestListenerAdapter implements ITestListener, ISuiteListener, IInvokedMethodListener {
+public class LoggingSetUp extends TestListenerAdapter implements ITestListener, ISuiteListener {
 
 	public void onStart(ISuite arg0) {
 
@@ -20,115 +24,9 @@ public class LoggingSetUp extends TestListenerAdapter implements ITestListener, 
 
 	}
 
-	// This belongs to ISuiteListener and will execute, once the Suite is
-	// finished
-
 	public void onFinish(ISuite arg0) {
 
 		Reporter.log("About to end executing Suite " + arg0.getName(), true);
-
-	}
-
-	// This belongs to ITestListener and will execute before starting of Test
-	// set/batch
-
-	/*@Override
-	public void onStart(ITestContext arg0) {
-
-		Reporter.log("About to begin executing Test " + arg0.getName(), true);
-
-	}
-
-	// This belongs to ITestListener and will execute, once the Test set/batch
-	// is finished
-
-	@Override
-	public void onFinish(ITestContext arg0) {
-
-		Reporter.log("Completed executing test " + arg0.getName(), true);
-
-	}*/
-
-	// This belongs to ITestListener and will execute only when the test is pass
-
-
-	@Override
-	public void onTestFailedButWithinSuccessPercentage(ITestResult arg0) {
-
-	}
-
-	@SuppressWarnings("unused")
-	private void printTestResults(ITestResult result) {
-
-		Reporter.log("Test Method resides in " + result.getTestClass().getName(), true);
-
-		if (result.getParameters().length != 0) {
-
-			String params = null;
-
-			for (Object parameter : result.getParameters()) {
-
-				params += parameter.toString() + ",";
-
-			}
-
-			Reporter.log("Test Method had the following parameters : " + params, true);
-
-		}
-
-		String status = null;
-
-		switch (result.getStatus()) {
-
-		case ITestResult.SUCCESS:
-
-			status = "Pass";
-
-			break;
-
-		case ITestResult.FAILURE:
-
-			status = "Failed";
-
-			break;
-
-		case ITestResult.SKIP:
-
-			status = "Skipped";
-
-		}
-
-		Reporter.log("Test Status: " + status, true);
-
-	}
-
-	// This belongs to IInvokedMethodListener and will execute before every
-	// method including @Before @After @Test
-
-	public void beforeInvocation(IInvokedMethod arg0, ITestResult arg1) {
-
-		String textMsg = "About to begin executing following method : " + returnMethodName(arg0.getTestMethod());
-
-		Reporter.log(textMsg, true);
-
-	}
-
-	// This belongs to IInvokedMethodListener and will execute after every
-	// method including @Before @After @Test
-
-	public void afterInvocation(IInvokedMethod arg0, ITestResult arg1) {
-
-		String textMsg = "Completed executing following method : " + returnMethodName(arg0.getTestMethod());
-
-		Reporter.log(textMsg, true);
-
-	}
-
-	// This will return method names to the calling function
-
-	private String returnMethodName(ITestNGMethod method) {
-
-		return method.getRealClass().getSimpleName() + "." + method.getMethodName();
 
 	}
 
@@ -168,4 +66,5 @@ public class LoggingSetUp extends TestListenerAdapter implements ITestListener, 
 	private void log(IClass testClass) {
 		System.out.println(testClass);
 	}
+
 }

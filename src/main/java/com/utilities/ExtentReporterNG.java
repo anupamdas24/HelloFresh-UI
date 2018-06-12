@@ -19,6 +19,11 @@ import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
 
+/*
+ * The package provides the beautiful reporting structure which can be passed to the management for review.
+ *  The report will be generated once the test executions are done under target/ surefirereports folder
+ */
+
 public class ExtentReporterNG extends SuiteHTMLReporter {
 	public ExtentReports extent;
 

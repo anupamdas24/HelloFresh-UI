@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite verbose="0" name="Failed suite [Hello Fresh UI TEST]">
+<suite guice-stage="DEVELOPMENT" verbose="0" name="Failed suite [Hello Fresh UI TEST]">
   <parameter name="browser" value="chrome"/>
   <listeners>
     <listener class-name="org.uncommons.reportng.HTMLReporter"/>
@@ -8,16 +8,19 @@
     <listener class-name="com.utilities.ExtentReporterNG"/>
     <listener class-name="com.utilities.LoggingSetUp"/>
   </listeners>
-  <test name="Login Test(failed)">
+  <test name="Login Test">
     <classes>
-      <class name="com.hellofresh.challenge.WebTest">
-        <methods>
-          <include name="takeScreenShotOnFailure"/>
-          <include name="launhOS"/>
-          <include name="signInTest"/>
-          <include name="afterTest"/>
-        </methods>
-      </class> <!-- com.hellofresh.challenge.WebTest -->
+      <class name="com.hellofresh.challenge.LoginTest"/>
     </classes>
-  </test> <!-- Login Test(failed) -->
+  </test> <!-- Login Test -->
+  <test name="SignIn Test">
+    <classes>
+      <class name="com.hellofresh.challenge.SignInTest"/>
+    </classes>
+  </test> <!-- SignIn Test -->
+  <test name="CheckOut Test">
+    <classes>
+      <class name="com.hellofresh.challenge.CheckOutTest"/>
+    </classes>
+  </test> <!-- CheckOut Test -->
 </suite> <!-- Failed suite [Hello Fresh UI TEST] -->

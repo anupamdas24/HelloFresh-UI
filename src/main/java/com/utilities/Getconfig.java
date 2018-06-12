@@ -1,3 +1,7 @@
+/*
+ * This class is helpful for fetching the data from the .properties file
+ */
+
 package com.utilities;
 
 import java.io.FileInputStream;

@@ -2,6 +2,7 @@
 
 <html>
   <head>
+  <meta charset='utf-8'>
   <title>TestNG reports</title>
 
     <link type="text/css" href="testng-reports.css" rel="stylesheet" />  
@@ -23,7 +24,7 @@
     <div class="top-banner-root">
       <span class="top-banner-title-font">Test results</span>
       <br/>
-      <span class="top-banner-font-1">1 suite, 1 failed test</span>
+      <span class="top-banner-font-1">1 suite</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -37,7 +38,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" class="navigator-link" panel-name="suite-Hello_Fresh_UI_TEST">
-              <span class="suite-name border-failed">Hello Fresh UI TEST</span>
+              <span class="suite-name border-passed">Hello Fresh UI TEST</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -53,7 +54,7 @@
                 </li>
                 <li>
                   <a href="#" class="navigator-link " panel-name="testlist-Hello_Fresh_UI_TEST">
-                    <span class="test-stats">1 test</span>
+                    <span class="test-stats">3 tests</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -90,21 +91,31 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">1 method, 1 failed,   </span>
+                    <span class="method-stats">3 methods,   3 passed</span>
                   </li>
                   <li>
-                    <span class="method-list-title failed">Failed methods</span>
-                    <span class="show-or-hide-methods failed">
-                      <a href="#" panel-name="suite-Hello_Fresh_UI_TEST" class="hide-methods failed suite-Hello_Fresh_UI_TEST"> (hide)</a> <!-- hide-methods failed suite-Hello_Fresh_UI_TEST -->
-                      <a href="#" panel-name="suite-Hello_Fresh_UI_TEST" class="show-methods failed suite-Hello_Fresh_UI_TEST"> (show)</a> <!-- show-methods failed suite-Hello_Fresh_UI_TEST -->
+                    <span class="method-list-title passed">Passed methods</span>
+                    <span class="show-or-hide-methods passed">
+                      <a href="#" panel-name="suite-Hello_Fresh_UI_TEST" class="hide-methods passed suite-Hello_Fresh_UI_TEST"> (hide)</a> <!-- hide-methods passed suite-Hello_Fresh_UI_TEST -->
+                      <a href="#" panel-name="suite-Hello_Fresh_UI_TEST" class="show-methods passed suite-Hello_Fresh_UI_TEST"> (show)</a> <!-- show-methods passed suite-Hello_Fresh_UI_TEST -->
                     </span>
-                    <div class="method-list-content failed suite-Hello_Fresh_UI_TEST">
+                    <div class="method-list-content passed suite-Hello_Fresh_UI_TEST">
                       <span>
-                        <img width="3%" src="failed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Hello_Fresh_UI_TEST" title="com.hellofresh.challenge.WebTest" hash-for-method="signInTest">signInTest</a> <!-- method navigator-link -->
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Hello_Fresh_UI_TEST" title="com.hellofresh.challenge.CheckOutTest" hash-for-method="checkOutTest(hf_challenge_123456@hf12345.com, 12345678)">checkOutTest(hf_challenge_123456@hf12345.com, 12345678)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
-                    </div> <!-- method-list-content failed suite-Hello_Fresh_UI_TEST -->
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Hello_Fresh_UI_TEST" title="com.hellofresh.challenge.LoginTest" hash-for-method="logInTest(hf_challenge_123456@hf12345.com, 12345678)">logInTest(hf_challenge_123456@hf12345.com, 12345678)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Hello_Fresh_UI_TEST" title="com.hellofresh.challenge.SignInTest" hash-for-method="signInTest(fname, lname, Qwerty, 1, 1, 2000, Company, Abc, 123, zxcvb, Qwerty, Colorado, 12345, Qwerty, 1234512...)">signInTest(fname, lname, Qwerty, 1, 1, 2000, Company, Abc, 123, zxcvb, Qwerty, Colorado, 12345, Qwerty, 1234512...)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content passed suite-Hello_Fresh_UI_TEST -->
                   </li>
                 </ul>
               </div> <!-- suite-section-content -->
@@ -116,114 +127,60 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Hello_Fresh_UI_TEST" class="panel Hello_Fresh_UI_TEST">
-          <div class="suite-Hello_Fresh_UI_TEST-class-failed">
+          <div class="suite-Hello_Fresh_UI_TEST-class-passed">
             <div class="main-panel-header rounded-window-top">
-              <img src="failed.png"/>
-              <span class="class-name">com.hellofresh.challenge.WebTest</span>
+              <img src="passed.png"/>
+              <span class="class-name">com.hellofresh.challenge.SignInTest</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="signInTest">
-                  </a> <!-- signInTest -->
+                  <a name="signInTest(fname, lname, Qwerty, 1, 1, 2000, Company, Abc, 123, zxcvb, Qwerty, Colorado, 12345, Qwerty, 1234512...)">
+                  </a> <!-- signInTest(fname, lname, Qwerty, 1, 1, 2000, Company, Abc, 123, zxcvb, Qwerty, Colorado, 12345, Qwerty, 1234512...) -->
                   <span class="method-name">signInTest</span>
-                  <div class="stack-trace"><b>"java.lang.NullPointerException
-	at com.hellofresh.challenge.WebTest.signInTest(WebTest.java:17)
-	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:295)
-	at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:84)
-	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:90)
-	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray2(ReflectionUtils.java:208)
-	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:155)
-	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:81)
-	at org.apache.maven.plugin.surefire.InPluginVMSurefireStarter.runSuitesInProcess(InPluginVMSurefireStarter.java:82)
-	at org.apache.maven.plugin.surefire.AbstractSurefireMojo.executeProvider(AbstractSurefireMojo.java:974)
-	at org.apache.maven.plugin.surefire.AbstractSurefireMojo.executeAfterPreconditionsChecked(AbstractSurefireMojo.java:824)
-	at org.apache.maven.plugin.surefire.AbstractSurefireMojo.execute(AbstractSurefireMojo.java:722)
-	at org.apache.maven.plugin.DefaultBuildPluginManager.executeMojo(DefaultBuildPluginManager.java:134)
-	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:207)
-	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:153)
-	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:145)
-	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:116)
-	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:80)
-	at org.apache.maven.lifecycle.internal.builder.singlethreaded.SingleThreadedBuilder.build(SingleThreadedBuilder.java:51)
-	at org.apache.maven.lifecycle.internal.LifecycleStarter.execute(LifecycleStarter.java:128)
-	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:307)
-	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:193)
-	at org.apache.maven.DefaultMaven.execute(DefaultMaven.java:106)
-	at org.apache.maven.cli.MavenCli.execute(MavenCli.java:863)
-	at org.apache.maven.cli.MavenCli.doMain(MavenCli.java:288)
-	at org.apache.maven.cli.MavenCli.main(MavenCli.java:199)
-	at org.codehaus.plexus.classworlds.launcher.Launcher.launchEnhanced(Launcher.java:289)
-	at org.codehaus.plexus.classworlds.launcher.Launcher.launch(Launcher.java:229)
-	at org.codehaus.plexus.classworlds.launcher.Launcher.mainWithExitCode(Launcher.java:415)
-	at org.codehaus.plexus.classworlds.launcher.Launcher.main(Launcher.java:356)
-... Removed 29 stack frames<br/> java.lang.NullPointerException
-	at com.hellofresh.challenge.WebTest.signInTest(WebTest.java:17)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:498)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:80)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
-	at org.testng.TestRunner.privateRun(TestRunner.java:767)
-	at org.testng.TestRunner.run(TestRunner.java:617)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1198)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1123)
-	at org.testng.TestNG.run(TestNG.java:1031)
-	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:295)
-	at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:84)
-	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:90)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:498)
-	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray2(ReflectionUtils.java:208)
-	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:155)
-	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:81)
-	at org.apache.maven.plugin.surefire.InPluginVMSurefireStarter.runSuitesInProcess(InPluginVMSurefireStarter.java:82)
-	at org.apache.maven.plugin.surefire.AbstractSurefireMojo.executeProvider(AbstractSurefireMojo.java:974)
-	at org.apache.maven.plugin.surefire.AbstractSurefireMojo.executeAfterPreconditionsChecked(AbstractSurefireMojo.java:824)
-	at org.apache.maven.plugin.surefire.AbstractSurefireMojo.execute(AbstractSurefireMojo.java:722)
-	at org.apache.maven.plugin.DefaultBuildPluginManager.executeMojo(DefaultBuildPluginManager.java:134)
-	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:207)
-	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:153)
-	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:145)
-	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:116)
-	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:80)
-	at org.apache.maven.lifecycle.internal.builder.singlethreaded.SingleThreadedBuilder.build(SingleThreadedBuilder.java:51)
-	at org.apache.maven.lifecycle.internal.LifecycleStarter.execute(LifecycleStarter.java:128)
-	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:307)
-	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:193)
-	at org.apache.maven.DefaultMaven.execute(DefaultMaven.java:106)
-	at org.apache.maven.cli.MavenCli.execute(MavenCli.java:863)
-	at org.apache.maven.cli.MavenCli.doMain(MavenCli.java:288)
-	at org.apache.maven.cli.MavenCli.main(MavenCli.java:199)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:498)
-	at org.codehaus.plexus.classworlds.launcher.Launcher.launchEnhanced(Launcher.java:289)
-	at org.codehaus.plexus.classworlds.launcher.Launcher.launch(Launcher.java:229)
-	at org.codehaus.plexus.classworlds.launcher.Launcher.mainWithExitCode(Launcher.java:415)
-	at org.codehaus.plexus.classworlds.launcher.Launcher.main(Launcher.java:356)
-"</b><br>com.hellofresh.challenge.WebTest.signInTest(WebTest.java:17)<br>sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)<br>sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)<br>sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)<br>java.lang.reflect.Method.invoke(Method.java:498)<br>org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:80)<br>org.testng.internal.Invoker.invokeMethod(Invoker.java:714)<br>org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)<br>org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)<br>org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)<br>org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)<br>org.testng.TestRunner.privateRun(TestRunner.java:767)<br>org.testng.TestRunner.run(TestRunner.java:617)<br>org.testng.SuiteRunner.runTest(SuiteRunner.java:334)<br>org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)<br>org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)<br>org.testng.SuiteRunner.run(SuiteRunner.java:240)<br>org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)<br>org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)<br>org.testng.TestNG.runSuitesSequentially(TestNG.java:1198)<br>org.testng.TestNG.runSuitesLocally(TestNG.java:1123)<br>org.testng.TestNG.run(TestNG.java:1031)<br>org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:295)<br>org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:84)<br>org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:90)<br>sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)<br>sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)<br>sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)<br>java.lang.reflect.Method.invoke(Method.java:498)<br>org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray2(ReflectionUtils.java:208)<br>org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:155)<br>org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:81)<br>org.apache.maven.plugin.surefire.InPluginVMSurefireStarter.runSuitesInProcess(InPluginVMSurefireStarter.java:82)<br>org.apache.maven.plugin.surefire.AbstractSurefireMojo.executeProvider(AbstractSurefireMojo.java:974)<br>org.apache.maven.plugin.surefire.AbstractSurefireMojo.executeAfterPreconditionsChecked(AbstractSurefireMojo.java:824)<br>org.apache.maven.plugin.surefire.AbstractSurefireMojo.execute(AbstractSurefireMojo.java:722)<br>org.apache.maven.plugin.DefaultBuildPluginManager.executeMojo(DefaultBuildPluginManager.java:134)<br>org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:207)<br>org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:153)<br>org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:145)<br>org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:116)<br>org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:80)<br>org.apache.maven.lifecycle.internal.builder.singlethreaded.SingleThreadedBuilder.build(SingleThreadedBuilder.java:51)<br>org.apache.maven.lifecycle.internal.LifecycleStarter.execute(LifecycleStarter.java:128)<br>org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:307)<br>org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:193)<br>org.apache.maven.DefaultMaven.execute(DefaultMaven.java:106)<br>org.apache.maven.cli.MavenCli.execute(MavenCli.java:863)<br>org.apache.maven.cli.MavenCli.doMain(MavenCli.java:288)<br>org.apache.maven.cli.MavenCli.main(MavenCli.java:199)<br>sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)<br>sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)<br>sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)<br>java.lang.reflect.Method.invoke(Method.java:498)<br>org.codehaus.plexus.classworlds.launcher.Launcher.launchEnhanced(Launcher.java:289)<br>org.codehaus.plexus.classworlds.launcher.Launcher.launch(Launcher.java:229)<br>org.codehaus.plexus.classworlds.launcher.Launcher.mainWithExitCode(Launcher.java:415)<br>org.codehaus.plexus.classworlds.launcher.Launcher.main(Launcher.java:356)<br>
-</div> <!-- stack-trace -->
+                  <span class="parameters">(fname, lname, Qwerty, 1, 1, 2000, Company, Abc, 123, zxcvb, Qwerty, Colorado, 12345, Qwerty, 12345123123, 12345123123, hf)</span>
                   <em>
 (Validate the successful sign in test)                  </em>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-Hello_Fresh_UI_TEST-class-failed -->
+          </div> <!-- suite-Hello_Fresh_UI_TEST-class-passed -->
+          <div class="suite-Hello_Fresh_UI_TEST-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">com.hellofresh.challenge.CheckOutTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="checkOutTest(hf_challenge_123456@hf12345.com, 12345678)">
+                  </a> <!-- checkOutTest(hf_challenge_123456@hf12345.com, 12345678) -->
+                  <span class="method-name">checkOutTest</span>
+                  <span class="parameters">(hf_challenge_123456@hf12345.com, 12345678)</span>
+                  <em>
+(Validate the successful checkout test)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Hello_Fresh_UI_TEST-class-passed -->
+          <div class="suite-Hello_Fresh_UI_TEST-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">com.hellofresh.challenge.LoginTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="logInTest(hf_challenge_123456@hf12345.com, 12345678)">
+                  </a> <!-- logInTest(hf_challenge_123456@hf12345.com, 12345678) -->
+                  <span class="method-name">logInTest</span>
+                  <span class="parameters">(hf_challenge_123456@hf12345.com, 12345678)</span>
+                  <em>
+(Validate the successful login in test)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Hello_Fresh_UI_TEST-class-passed -->
         </div> <!-- panel Hello_Fresh_UI_TEST -->
         <div panel-name="test-xml-Hello_Fresh_UI_TEST" class="panel">
           <div class="main-panel-header rounded-window-top">
@@ -233,7 +190,7 @@
             <pre>
 &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 &lt;!DOCTYPE suite SYSTEM &quot;http://testng.org/testng-1.0.dtd&quot;&gt;
-&lt;suite verbose=&quot;0&quot; name=&quot;Hello Fresh UI TEST&quot;&gt;
+&lt;suite guice-stage=&quot;DEVELOPMENT&quot; verbose=&quot;0&quot; name=&quot;Hello Fresh UI TEST&quot;&gt;
   &lt;parameter name=&quot;browser&quot; value=&quot;chrome&quot;/&gt;
   &lt;listeners&gt;
     &lt;listener class-name=&quot;org.uncommons.reportng.HTMLReporter&quot;/&gt;
@@ -243,9 +200,19 @@
   &lt;/listeners&gt;
   &lt;test name=&quot;Login Test&quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;com.hellofresh.challenge.WebTest&quot;/&gt;
+      &lt;class name=&quot;com.hellofresh.challenge.LoginTest&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Login Test --&gt;
+  &lt;test name=&quot;SignIn Test&quot;&gt;
+    &lt;classes&gt;
+      &lt;class name=&quot;com.hellofresh.challenge.SignInTest&quot;/&gt;
+    &lt;/classes&gt;
+  &lt;/test&gt; &lt;!-- SignIn Test --&gt;
+  &lt;test name=&quot;CheckOut Test&quot;&gt;
+    &lt;classes&gt;
+      &lt;class name=&quot;com.hellofresh.challenge.CheckOutTest&quot;/&gt;
+    &lt;/classes&gt;
+  &lt;/test&gt; &lt;!-- CheckOut Test --&gt;
 &lt;/suite&gt; &lt;!-- Hello Fresh UI TEST --&gt;
             </pre>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -258,6 +225,12 @@
             <ul>
               <li>
                 <span class="test-name">Login Test (1 class)</span>
+              </li>
+              <li>
+                <span class="test-name">SignIn Test (1 class)</span>
+              </li>
+              <li>
+                <span class="test-name">CheckOut Test (1 class)</span>
               </li>
             </ul>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -283,16 +256,24 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(1);
+data.addRows(3);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'signInTest')
-data.setCell(0, 2, 'com.hellofresh.challenge.WebTest')
-data.setCell(0, 3, 3);
+data.setCell(0, 1, 'checkOutTest')
+data.setCell(0, 2, 'com.hellofresh.challenge.CheckOutTest')
+data.setCell(0, 3, 28286);
+data.setCell(1, 0, 1)
+data.setCell(1, 1, 'signInTest')
+data.setCell(1, 2, 'com.hellofresh.challenge.SignInTest')
+data.setCell(1, 3, 18876);
+data.setCell(2, 0, 2)
+data.setCell(2, 1, 'logInTest')
+data.setCell(2, 2, 'com.hellofresh.challenge.LoginTest')
+data.setCell(2, 3, 9402);
 window.suiteTableData['Hello_Fresh_UI_TEST']= { tableData: data, tableDiv: 'times-div-Hello_Fresh_UI_TEST'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 3 ms</span>
+              <span class="suite-total-time">Total running time: 56 seconds</span>
               <div id="times-div-Hello_Fresh_UI_TEST">
               </div> <!-- times-div-Hello_Fresh_UI_TEST -->
             </div> <!-- times-div -->
@@ -303,31 +284,13 @@ return data;
             <span class="header-content">Reporter output for Hello Fresh UI TEST</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
-            <div class="reporter-method-div">
-              <span class="reporter-method-name">signInTest</span>
-              <div class="reporter-method-output-div">
-                <span class="reporter-method-output">Completed executing following method : WebTest.signInTest</span>
-                <span class="reporter-method-output">Completed executing following method : WebTest.signInTest</span>
-                <span class="reporter-method-output">About to begin executing following method : BaseOperation.takeScreenShotOnFailure</span>
-                <span class="reporter-method-output">About to begin executing following method : BaseOperation.takeScreenShotOnFailure</span>
-              </div> <!-- reporter-method-output-div -->
-            </div> <!-- reporter-method-div -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
         <div panel-name="ignored-methods-Hello_Fresh_UI_TEST" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">2 ignored methods</span>
+            <span class="header-content">0 ignored methods</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
-            <div class="ignored-class-div">
-              <span class="ignored-class-name">com.hellofresh.challenge.WebTest</span>
-              <div class="ignored-methods-div">
-                <span class="ignored-method-name">logInTest</span>
-                <br/>
-                <span class="ignored-method-name">checkOutTest</span>
-                <br/>
-              </div> <!-- ignored-methods-div -->
-            </div> <!-- ignored-class-div -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
         <div panel-name="chronological-Hello_Fresh_UI_TEST" class="panel">
@@ -336,24 +299,60 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">com.hellofresh.challenge.WebTest</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">com.hellofresh.challenge.LoginTest</div> <!-- chronological-class-name -->
               <div class="configuration-class before">
                 <span class="method-name">launhOS(chrome)</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-class before -->
               <div class="test-method">
-                <img src="failed.png">
-                </img>
-                <span class="method-name">signInTest</span>
-                <span class="method-start">14566 ms</span>
+                <span class="method-name">logInTest(hf_challenge_123456@hf12345.com, 12345678)</span>
+                <span class="method-start">16317 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
-                <span class="method-name">takeScreenShotOnFailure([TestResult name=signInTest status=FAILURE method=WebTest.signInTest()[pri:0, instance:com.hellofres...)</span>
-                <span class="method-start">14572 ms</span>
+                <span class="method-name">takeScreenShotOnFailure([TestResult name=logInTest status=SUCCESS method=LoginTest.logInTest(java.lang.String, java.lang.Str...)</span>
+                <span class="method-start">25721 ms</span>
               </div> <!-- configuration-method after -->
+              <div class="configuration-test after">
+                <span class="method-name">endTest</span>
+                <span class="method-start">25722 ms</span>
+              </div> <!-- configuration-test after -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.hellofresh.challenge.SignInTest</div> <!-- chronological-class-name -->
+              <div class="configuration-class before">
+                <span class="method-name">launhOS(chrome)</span>
+                <span class="method-start">26820 ms</span>
+              </div> <!-- configuration-class before -->
+              <div class="test-method">
+                <span class="method-name">signInTest(fname, lname, Qwerty, 1, 1, 2000, Company, Abc, 123, zxcvb, Qwerty, Colorado, 12345, Qwerty, 1234512...)</span>
+                <span class="method-start">41556 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">takeScreenShotOnFailure([TestResult name=signInTest status=SUCCESS method=SignInTest.signInTest(java.lang.String, java.lang....)</span>
+                <span class="method-start">60432 ms</span>
+              </div> <!-- configuration-method after -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.hellofresh.challenge.CheckOutTest</div> <!-- chronological-class-name -->
+              <div class="configuration-class before">
+                <span class="method-name">launhOS(chrome)</span>
+                <span class="method-start">60443 ms</span>
+              </div> <!-- configuration-class before -->
+              <div class="test-method">
+                <span class="method-name">checkOutTest(hf_challenge_123456@hf12345.com, 12345678)</span>
+                <span class="method-start">75574 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">takeScreenShotOnFailure([TestResult name=checkOutTest status=SUCCESS method=CheckOutTest.checkOutTest(java.lang.String, java...)</span>
+                <span class="method-start">103860 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-test after">
+                <span class="method-name">endTest</span>
+                <span class="method-start">103860 ms</span>
+              </div> <!-- configuration-test after -->
               <div class="configuration-suite after">
                 <span class="method-name">afterTest</span>
-                <span class="method-start">15868 ms</span>
+                <span class="method-start">104969 ms</span>
               </div> <!-- configuration-suite after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

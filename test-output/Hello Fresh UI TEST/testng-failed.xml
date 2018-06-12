@@ -9,15 +9,12 @@
     <listener class-name="com.utilities.LoggingSetUp"/>
   </listeners>
   <test name="Login Test(failed)">
-    <parameter name="browser" value="chrome"/>
     <classes>
       <class name="com.hellofresh.challenge.WebTest">
         <methods>
-          <include name="logInTest"/>
           <include name="takeScreenShotOnFailure"/>
           <include name="launhOS"/>
           <include name="signInTest"/>
-          <include name="checkOutTest"/>
           <include name="afterTest"/>
         </methods>
       </class> <!-- com.hellofresh.challenge.WebTest -->

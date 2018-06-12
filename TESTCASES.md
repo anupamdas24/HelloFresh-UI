@@ -35,7 +35,7 @@
 * Log in as existing customer
 * Click *Women* button in the header
 * Click the product with name "Faded Short Sleeve T-shirts"
-* Click *Add to card*
+* Click *Add to cart*
 * Click *Proceed to checkout*
 * Click *Proceed to checkout*
 * Click *Proceed to checkout*
